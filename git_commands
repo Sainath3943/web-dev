@@ -1,0 +1,5 @@
+ git add .
+
+ git commit -m "initial commit"                       // write message in quotes what we are curently pushing
+
+ git push origin master
