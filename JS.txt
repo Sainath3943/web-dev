@@ -1,0 +1,113 @@
+Console uses REPL
+Read-Evaluate-Print-Loop
+
+A variable is simply the name of storage location
+
+Data types in JS
+  Primitive types
+   Number 
+   Boolean
+   String
+   Undefined
+   Null
+
+Let keyword
+syntax   let age=23;
+
+const keyword -- values of constants can't be changed with re-assignment and they can't be redeclared
+const year=2024;
+const = 2026  //error
+
+
+var keyword
+This is the old syntax of writing variables
+.
+.
+.
+.
+
+Typescript -- It is a static typed whereas JS is dynamic typed
+               i.e. once any variable is assigned a datatype its datatype cannot be changed
+
+
+Strings -- Strings are text or ssequence of characters
+Concatenation -- Adding srings together
+
+Undefined -- A variable that hasnot been assigned a value is of type Undefined
+null -- The null value represents the intentional absence of any object value
+
+
+console.log(); -- To write a message on the console
+
+linking JS file
+<script src ="app.js"> </script>
+The best place to place script tag is after the end of html code inside body tag
+
+
+Template literals -- They are used to add embedded expressions in a String
+eg.  let a=5,  b=10
+      console.log(`Your pay is $(a+b) rupees`);
+      // console.log("Price is", a+b,"rupees");
+
+
+Operators in JS
+Arithmetic (+, -, *, /, %, **)
+Unary  (++,  --)
+Assignment (=, +=, -=, *=, /=, %= etc)
+
+Comparison -- To compare two values  (>, <, >=, <=, !=)  === - compares both type and values
+Logical  -- ( && , || , !)
+
+Alert -- Displays an alert message on the page
+Prompt -- Displays a dialog box that asks user for some input 
+
+
+//Functions in JS
+  Function Definition (telling js)
+
+      function funcName() {
+            ///do something
+      }
+
+  Function Calling(using the function)
+
+      funcName();
+
+  functions with arguments
+      function funcName(arg1, arg2) {
+            //do something
+      }
+
+      function printInfo (name,age) {
+            console.log(`${name}'s age is ${age}.`);
+      }
+      printInfo("krutika", 20);
+
+
+  //Scope -- Scope determines the accessibility of variables, objects, and functions from different parts of the code 
+
+  // Function Scope -- Variables defined inside a function are not accessible (visible) from outside the function
+  //Block scope -- Variables declared inside a {} block cannot be accessed from outside the block 
+  //Lexical scope -- a variable defined outside a function can be acceessible inside another function defined after the variable declaration
+
+  //Methods -- Actions that can be performed on objects 
+      const calculator = {
+            add: function(a, b) {
+                  return a + b;
+            },
+            sub: function(a, b) {
+                  return a - b;
+            },
+            mul: function(a, b) {
+                  return a * b;
+            }     
+      };
+
+
+// this Keyword -- "This" keyword refers to an object that is executing the current piece of code
+//this with arrow functions -- 
+      const student = {
+            name: "aman",
+            marks: 95,
+            prop: this, //global scope
+      }
