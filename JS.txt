@@ -91,6 +91,7 @@ Prompt -- Displays a dialog box that asks user for some input
   //Lexical scope -- a variable defined outside a function can be acceessible inside another function defined after the variable declaration
 
   //Methods -- Actions that can be performed on objects 
+  The functions which are defined inside object are called methods 
       const calculator = {
             add: function(a, b) {
                   return a + b;
@@ -111,3 +112,17 @@ Prompt -- Displays a dialog box that asks user for some input
             marks: 95,
             prop: this, //global scope
       }
+
+Arrow functions 
+   const sum = (a, b) => {
+      console.log(a + b);
+   };
+
+setTimeout( function, timeout)
+
+eg    console.log("hi there!");
+      setTimeout( () => {
+            console.log("Apna College");
+      }, 4000);
+
+      console.log("welcome to");
