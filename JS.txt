@@ -126,3 +126,79 @@ eg    console.log("hi there!");
       }, 4000);
 
       console.log("welcome to");
+
+
+//array methods
+      arr.forEach -- 
+let arr= [1,2,3,4,5];
+
+arr.forEach(function(el) {
+      console.log(el);
+});
+
+//filter
+arr.filter
+let nums = [1,2,33,4,52,4,6,3,2,];
+let ans = nums.filter((el) => {
+      return !(el % 2 == 0);    //even -> true, odd -> false
+});
+
+
+//Every -- Returns true if every element of array gives true for some function. Else returns false 
+ its like logical AND
+[1,2,3,4].every( (el) => (el%2 == 0));
+true
+
+//Some -- returns true if some element of array gives true for some function.
+[1,2,3,4].some( (el) => (el%2 == 0));
+true
+
+//Reduce -- Reduces the array to a single value
+[1,2,3,4].reduce( (res, el) => (res + el));  
+
+
+//Spread -- here we divide single value and take multile values from it
+Expands an iterable into multiple values
+function func(...arr) {
+      //do something
+}
+
+//Rest --  here we get multiple values and we store it in a single value
+Allows a function to take an indefinite number of arguments and bundle them in an array
+function sum(...args) {
+      return args.reduce((add,el) => add + el);
+}
+
+
+
+// DOM -- Document object model
+
+
+//getElementByClassName
+
+//Query Selectors --allows us to use CSS selector 
+The Document method querySelector() returns the first Element within the document that matches the specified CSS selector, or group of CSS selectors. If no matches are found, null is returned.
+
+//manipulating attributes 
+obj.getAttribute(attr)
+obj.setAttribute(attr, val)
+
+//manipulating styling 
+obj.style
+
+
+//Adding Elements 
+document.crreateElement('p');
+
+let newP = document.crreateElement('p');
+
+console.dir(newP);
+newP.innerText= "Hi, I sm new P";
+
+console.dir(newP);
+//even after doing this you will not see on the js or screen so we have to insert new function after creatig it
+//some of these functions are:
+appendChild(element)          //
+append(element)
+prepend(element)
+insertAdjacent(where, element)
