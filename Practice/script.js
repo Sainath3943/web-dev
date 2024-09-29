@@ -315,7 +315,7 @@
 
 // changeColor("red", 1000,() => {
 //   changeColor("orange", 1000, () => {
-//     changeColor("green", 1000);
+//     changeColor("green", 1000);  
 //   });
 // });
 
@@ -359,15 +359,110 @@
 // );
 
 
-//Promises -- The  promise object represents the eventual completion of an asynchronous operation and its resulting value
+// //Promises -- The  promise object represents the eventual completion of an asynchronous operation and its resulting value
+// //Promise method not only consists of resolve and reject but there are also methods/properties like pending, rejected, fulfilled, 
 
-function savetoDb(data) {
-    return new Promise((resolve, reject) => {
-      let internetspeed = Math.floor(Math.random() * 10) + 1;
-      if (internetspeed > 4) {
-        resolve("success: data was saved");
-      }else {
-        reject("Failure: weak connection");
-      }
-    })
+// function savetoDb(data) {
+//     return new Promise((resolve, reject) => {
+//       let internetspeed = Math.floor(Math.random() * 10) + 1;
+//       if (internetspeed > 4) {
+//         resolve("success: data was saved");
+//       }else {
+//         reject("Failure: weak connection");
+//       }
+//     }); 
+// }
+
+// // then and catch methods
+// let request = savetoDb("Apna College"); 
+// request 
+//   .then(() => {
+//     console.log("promise resolved");
+//   })
+//   .catch(() => {
+//     console.log("promise rejected");
+//   });
+
+// //multiple then catch methods -- this methods help us from the bulky code of Callback Hell and makes a more readable code
+// let request = savetoDb("Apna College"); 
+// request 
+//   .then((result) => {
+//     console.log("promise resolved");
+//     console.log("Result:", result);
+//   })
+//   .then((result) => {
+//     console.log("data 2 saved promise resolved");
+//     console.log("Result:", result);
+//   })
+//   .catch((error) => {
+//     console.log("promise rejected");
+//     console.log(error);
+//   });
+
+
+// //color change using the and catch
+// h1 = document.querySelector("h1");
+// function changeColor(color, delay) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout( ()=> {
+//       h1.style.color = color;
+//       console.log(`color changed to ${color}!`);
+//       resolve("color chnaged!");
+//     },delay);
+//   }); 
+// }
+
+// changeColor("red", 1000)
+//   .then(() => {
+//     console.log("red color was changed");
+//     return changeColor("orange", 1000);
+//   })
+//   .then(() => {
+//     console.log("orange color was changed");
+//     return changeColor("blue", 1000);
+//   })
+//   .then(() => {
+//     console.log("blue color was completed");   
+//   });
+
+// //Async functions -- They are easy to read and maintain.  Async function by default returns a promise.
+// async function greet() {
+//   //throw "404 page not found";
+//   return "hello!";
+// }
+
+// greet()
+//   .then((result) => {
+//     console.log("promise was resolved");
+//     console.log("result was:", result);
+//   })
+//   .catch((err) => {
+//     console.log("promise was rejected with err", err);
+//   });
+
+//   let demo = async () => {
+//     return 5;
+//   };
+
+
+//Await keyword -- Pauses the execution of its surrounding async function until the promise is settled( resolved/ rejected).
+//Await function can be used inside a async function only.
+
+//await inside the color change code
+h1 = document.querySelector("h1");
+function changeColor(color, delay) {
+  return new Promise((resolve, reject) => {
+    setTimeout( ()=> {
+      h1.style.color = color;
+      console.log(`color changed to ${color}!`);
+      resolve("color changed!");
+    },delay);
+  }); 
+}
+
+async function demo() {
+  await changeColor("red", 1000);
+  await changeColor("orange", 1000);
+  await changeColor("blue", 1000);
+  changeColor("green", 1000);
 }
